@@ -8,15 +8,16 @@
 
   <style>
     :root {
-      --bg-dark: #050816;
-      --bg-card: rgba(15, 23, 42, 0.9);
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.2);
-      --danger: #fb7185;
-      --success: #4ade80;
+      --bg-page: #f4f7f5;
+      --bg-header: rgba(255, 255, 255, 0.92);
+      --bg-card: #ffffff;
+      --accent: #16a34a;
+      --accent-soft: rgba(22, 163, 74, 0.08);
+      --text-main: #022c22;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(15, 118, 110, 0.16);
+      --danger: #dc2626;
+      --success: #16a34a;
     }
 
     * {
@@ -28,7 +29,8 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
+      background:
+        radial-gradient(circle at top left, #d1fae5 0, #f9fafb 45%, #f3f4f6 100%);
       color: var(--text-main);
       min-height: 100vh;
       line-height: 1.5;
@@ -49,14 +51,14 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(16px);
       background: linear-gradient(
         to bottom,
-        rgba(2, 6, 23, 0.95),
-        rgba(2, 6, 23, 0.7),
+        var(--bg-header),
+        rgba(255, 255, 255, 0.88),
         transparent
       );
-      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     }
 
     .nav {
@@ -77,25 +79,28 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       font-size: 0.85rem;
+      color: #065f46;
     }
 
     .logo-badge {
       width: 32px;
       height: 32px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #e0f2fe, #38bdf8 35%, #020617 100%);
+      background: radial-gradient(circle at 30% 20%, #ecfdf5, #22c55e 40%, #047857 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.9rem;
-      box-shadow: 0 0 24px rgba(56, 189, 248, 0.45);
+      box-shadow: 0 0 16px rgba(34, 197, 94, 0.45);
+      color: #f9fafb;
     }
 
     .logo span:last-child {
-      opacity: 0.7;
+      opacity: 0.8;
       font-weight: 400;
       text-transform: none;
       font-size: 0.75rem;
+      color: #6b7280;
     }
 
     .nav-links {
@@ -115,16 +120,16 @@
 
     .nav-links a:hover {
       color: var(--text-main);
-      border-color: rgba(148, 163, 184, 0.5);
+      border-color: rgba(34, 197, 94, 0.6);
     }
 
     .nav-pill {
       border-radius: 999px;
       padding: 0.4rem 0.9rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.13), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.12), #ecfdf5);
       font-size: 0.8rem;
-      color: #e5f4ff;
+      color: #065f46;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-weight: 500;
@@ -148,7 +153,7 @@
       padding: 0.25rem 0.75rem;
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at left, rgba(56, 189, 248, 0.2), transparent);
+      background: radial-gradient(circle at left, rgba(34, 197, 94, 0.18), #ffffff);
       color: var(--text-muted);
     }
 
@@ -157,7 +162,7 @@
       height: 8px;
       border-radius: 999px;
       background: var(--success);
-      box-shadow: 0 0 16px rgba(74, 222, 128, 0.7);
+      box-shadow: 0 0 14px rgba(34, 197, 94, 0.7);
     }
 
     .hero-title {
@@ -165,10 +170,11 @@
       font-size: clamp(2.3rem, 4vw, 3rem);
       font-weight: 700;
       letter-spacing: -0.03em;
+      color: #022c22;
     }
 
     .hero-title span {
-      background: linear-gradient(to right, #38bdf8, #a855f7);
+      background: linear-gradient(to right, #16a34a, #0ea5e9);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -192,9 +198,9 @@
       font-size: 0.78rem;
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      background-color: rgba(15, 23, 42, 0.9);
-      color: #e0f2fe;
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      background-color: #ecfdf5;
+      color: #065f46;
     }
 
     .hero-actions {
@@ -221,26 +227,27 @@
     }
 
     .btn-primary {
-      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
-      box-shadow: 0 0 32px rgba(56, 189, 248, 0.35);
-      color: #0b1220;
+      background: radial-gradient(circle at top left, #22c55e, #16a34a);
+      box-shadow: 0 0 22px rgba(34, 197, 94, 0.45);
+      color: #ecfdf5;
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 28px rgba(34, 197, 94, 0.6);
     }
 
     .btn-ghost {
       border-color: var(--border-subtle);
-      background: rgba(15, 23, 42, 0.9);
+      background: #ffffff;
       color: var(--text-muted);
     }
 
     .btn-ghost:hover {
-      border-color: rgba(148, 163, 184, 0.7);
+      border-color: rgba(15, 118, 110, 0.45);
       color: var(--text-main);
       transform: translateY(-1px);
+      background-color: #f9fafb;
     }
 
     .btn-icon {
@@ -268,18 +275,19 @@
       height: 8px;
       border-radius: 999px;
       background: var(--danger);
-      box-shadow: 0 0 16px rgba(248, 113, 113, 0.7);
+      box-shadow: 0 0 12px rgba(220, 38, 38, 0.7);
     }
 
     .hero-panel {
       border-radius: 1.5rem;
       padding: 1.4rem;
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      border: 1px solid rgba(148, 163, 184, 0.4);
       background:
-        radial-gradient(circle at top, rgba(56, 189, 248, 0.25), transparent 60%),
-        radial-gradient(circle at bottom, rgba(59, 130, 246, 0.15), rgba(15, 23, 42, 0.95));
+        radial-gradient(circle at top, rgba(34, 197, 94, 0.18), transparent 60%),
+        radial-gradient(circle at bottom, rgba(45, 212, 191, 0.12), #ffffff);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
 
     .hero-panel-header {
@@ -288,20 +296,21 @@
       align-items: center;
       margin-bottom: 1rem;
       font-size: 0.78rem;
-      color: #dbeafe;
+      color: #065f46;
     }
 
     .hero-panel-badge {
       padding: 0.18rem 0.55rem;
       border-radius: 999px;
-      border: 1px solid rgba(191, 219, 254, 0.6);
-      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(22, 163, 74, 0.35);
+      background: #ecfdf5;
+      color: #065f46;
     }
 
     .hero-map {
       border-radius: 1.1rem;
-      border: 1px dashed rgba(148, 163, 184, 0.4);
-      background-color: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      background-color: #f9fafb;
       padding: 0.8rem;
       position: relative;
       overflow: hidden;
@@ -325,8 +334,9 @@
     .hero-map-badges span {
       padding: 0.1rem 0.45rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       font-size: 0.7rem;
+      background-color: #ffffff;
     }
 
     .hero-lines {
@@ -334,17 +344,17 @@
       height: 190px;
       border-radius: 0.9rem;
       background:
-        radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.4), transparent 55%),
-        radial-gradient(circle at 80% 90%, rgba(244, 114, 182, 0.35), transparent 55%),
-        radial-gradient(circle at 10% 90%, rgba(22, 163, 74, 0.35), transparent 60%),
-        #020617;
+        radial-gradient(circle at 20% 10%, rgba(34, 197, 94, 0.25), transparent 55%),
+        radial-gradient(circle at 80% 90%, rgba(45, 212, 191, 0.2), transparent 55%),
+        radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.15), transparent 60%),
+        #e5f7ee;
       overflow: hidden;
     }
 
     .line {
       position: absolute;
       border-radius: 999px;
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
     .line-bus {
@@ -353,7 +363,7 @@
       top: 30%;
       left: -5%;
       right: 0;
-      background: linear-gradient(to right, #38bdf8, #22c55e);
+      background: linear-gradient(to right, #16a34a, #22c55e);
     }
 
     .line-tram {
@@ -361,7 +371,7 @@
       height: 100%;
       left: 50%;
       top: -5%;
-      background: linear-gradient(to bottom, #a855f7, #38bdf8);
+      background: linear-gradient(to bottom, #0ea5e9, #22c55e);
     }
 
     .line-minibus {
@@ -369,7 +379,7 @@
       width: 120%;
       bottom: 18%;
       left: -10%;
-      background: linear-gradient(to right, #f97316, #22c55e);
+      background: linear-gradient(to right, #f97316, #16a34a);
     }
 
     .node {
@@ -377,20 +387,20 @@
       width: 12px;
       height: 12px;
       border-radius: 999px;
-      border: 2px solid #0f172a;
-      box-shadow: 0 0 16px rgba(15, 23, 42, 0.8);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 10px rgba(15, 23, 42, 0.4);
     }
 
     .node-a {
       top: 26%;
       left: 17%;
-      background: #38bdf8;
+      background: #16a34a;
     }
 
     .node-b {
       top: 48%;
       left: 50%;
-      background: #a855f7;
+      background: #0ea5e9;
     }
 
     .node-c {
@@ -404,9 +414,9 @@
       padding: 0.2rem 0.5rem;
       border-radius: 999px;
       font-size: 0.7rem;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      color: #e5e7eb;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      color: #0f172a;
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
@@ -435,11 +445,11 @@
     }
 
     .vehicle-bus span {
-      background: #38bdf8;
+      background: #16a34a;
     }
 
     .vehicle-tram span {
-      background: #a855f7;
+      background: #0ea5e9;
     }
 
     .vehicle-minibus span {
@@ -456,7 +466,7 @@
     }
 
     .hero-panel-footer strong {
-      color: #e5e7eb;
+      color: #065f46;
       font-weight: 500;
     }
 
@@ -469,7 +479,8 @@
     .pill-row span {
       padding: 0.15rem 0.5rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background-color: #ffffff;
     }
 
     section {
@@ -488,6 +499,7 @@
       font-size: 1.3rem;
       font-weight: 600;
       letter-spacing: -0.02em;
+      color: #064e3b;
     }
 
     .section-subtitle {
@@ -500,9 +512,9 @@
       font-size: 0.75rem;
       padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.5);
+      border: 1px solid rgba(22, 163, 74, 0.35);
       background-color: var(--accent-soft);
-      color: #e0f2fe;
+      color: #065f46;
     }
 
     .grid-3 {
@@ -513,18 +525,19 @@
 
     .card {
       border-radius: 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.2);
+      border: 1px solid rgba(148, 163, 184, 0.4);
       background: var(--bg-card);
       padding: 1.25rem;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
     }
 
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 55%);
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 55%);
       opacity: 0;
       transition: opacity 0.2s ease;
       pointer-events: none;
@@ -544,14 +557,16 @@
     .card-title {
       font-size: 0.98rem;
       font-weight: 500;
+      color: #065f46;
     }
 
     .card-tag {
       font-size: 0.7rem;
       padding: 0.18rem 0.5rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       color: var(--text-muted);
+      background-color: #f9fafb;
     }
 
     .card-body {
@@ -571,8 +586,8 @@
     .card-meta span {
       padding: 0.12rem 0.5rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #f3f4f6;
+      border: 1px solid rgba(148, 163, 184, 0.8);
     }
 
     .grid-2 {
@@ -601,15 +616,15 @@
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: linear-gradient(to bottom right, #38bdf8, #a855f7);
+      background: linear-gradient(to bottom right, #16a34a, #0ea5e9);
       flex-shrink: 0;
     }
 
     .timeline {
       border-radius: 1rem;
-      border: 1px dashed rgba(148, 163, 184, 0.4);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
       padding: 1.1rem 1.1rem 0.9rem;
-      background: rgba(15, 23, 42, 0.9);
+      background: #f9fafb;
       font-size: 0.82rem;
     }
 
@@ -629,7 +644,7 @@
       top: 1.4rem;
       bottom: 0.2rem;
       width: 1px;
-      background: linear-gradient(to bottom, rgba(148, 163, 184, 0.5), transparent);
+      background: linear-gradient(to bottom, rgba(148, 163, 184, 0.7), transparent);
     }
 
     .timeline-index {
@@ -641,13 +656,14 @@
       align-items: center;
       justify-content: center;
       font-size: 0.7rem;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.4), #020617);
+      background: radial-gradient(circle at top, rgba(34, 197, 94, 0.35), #ffffff);
+      color: #065f46;
     }
 
     .timeline-title {
       font-weight: 500;
       margin-bottom: 0.1rem;
-      color: #e5e7eb;
+      color: #065f46;
     }
 
     .timeline-body {
@@ -656,22 +672,24 @@
 
     .newsletter {
       border-radius: 1.2rem;
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       background:
-        radial-gradient(circle at left, rgba(56, 189, 248, 0.25), transparent 55%),
-        rgba(15, 23, 42, 0.95);
+        radial-gradient(circle at left, rgba(34, 197, 94, 0.22), transparent 55%),
+        #ffffff;
       padding: 1.4rem 1.4rem 1.2rem;
       display: grid;
       grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
       gap: 1.25rem;
       align-items: center;
       margin-top: 2.5rem;
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.06);
     }
 
     .newsletter-title {
       font-size: 1.05rem;
       font-weight: 600;
       margin-bottom: 0.3rem;
+      color: #065f46;
     }
 
     .newsletter-text {
@@ -690,23 +708,23 @@
       flex: 1;
       min-width: 0;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.9);
       padding: 0.65rem 1rem;
-      background-color: rgba(15, 23, 42, 0.9);
+      background-color: #f9fafb;
       color: var(--text-main);
       font-size: 0.86rem;
       outline: none;
     }
 
     .newsletter-input::placeholder {
-      color: #6b7280;
+      color: #9ca3af;
     }
 
     footer {
       margin-top: 3rem;
       font-size: 0.78rem;
       color: var(--text-muted);
-      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      border-top: 1px solid rgba(148, 163, 184, 0.5);
       padding-top: 1.4rem;
       display: flex;
       justify-content: space-between;
@@ -718,7 +736,7 @@
       text-decoration: underline;
       text-decoration-style: dotted;
       text-underline-offset: 2px;
-      color: #cbd5f5;
+      color: #047857;
     }
 
     .footer-links {
@@ -730,10 +748,10 @@
     .mobile-nav-toggle {
       display: none;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.9);
       padding: 0.2rem 0.7rem;
       font-size: 0.8rem;
-      background: rgba(15, 23, 42, 0.95);
+      background: #ffffff;
       color: var(--text-muted);
       cursor: pointer;
     }
@@ -769,8 +787,9 @@
         flex-direction: column;
         padding: 0.75rem 1rem;
         border-radius: 0.9rem;
-        border: 1px solid rgba(148, 163, 184, 0.4);
-        background-color: rgba(15, 23, 42, 0.97);
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background-color: #ffffff;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
       }
       .nav-links.open {
         display: flex;
@@ -858,7 +877,7 @@
         <div class="hero-panel-header">
           <div>
             <div style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.16em;">Konsept Görünüm</div>
-            <div style="font-size:0.78rem; color:#cbd5f5; margin-top:0.15rem;">
+            <div style="font-size:0.78rem; color:#047857; margin-top:0.15rem;">
               Sakarya – Çok modlu ulaşım katmanı
             </div>
           </div>
